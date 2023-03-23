@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "scrape": "tsx scripts/scrape.ts",
-    "embed": "tsx scripts/embed.ts"
+    "embed": "tsx scripts/embed_tweet.ts"
   },
   "dependencies": {
     "@next/font": "^13.2.3",

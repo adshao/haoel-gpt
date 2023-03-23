@@ -37,3 +37,6 @@ next-env.d.ts
 
 # tsn
 tsn.json
+
+.env
+out.log

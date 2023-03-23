@@ -22,13 +22,10 @@ create or replace function pg_search (
 )
 returns table (
   id bigint,
-  essay_title text,
-  essay_url text,
-  essay_date text,
-  essay_thanks text,
+  tweet_url text,
+  tweet_date datetime,
   content text,
-  content_length bigint,
-  content_tokens bigint,
+  author text,
   similarity float
 )
 language plpgsql
@@ -37,13 +34,10 @@ begin
   return query
   select
     pg.id,
-    pg.essay_title,
-    pg.essay_url,
-    pg.essay_date,
-    pg.essay_thanks,
+    pg.tweet_url,
+    pg.tweet_date,
     pg.content,
-    pg.content_length,
-    pg.content_tokens,
+    pg.author,
     1 - (pg.embedding <=> query_embedding) as similarity
   from pg
   where 1 - (pg.embedding <=> query_embedding) > similarity_threshold

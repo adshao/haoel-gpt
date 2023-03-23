@@ -199,10 +199,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Paul Graham GPT</title>
+        <title>Vitalik GPT</title>
         <meta
           name="description"
-          content={`AI-powered search and chat for Paul Graham's essays.`}
+          content={`AI-powered search and chat for Twitter accounts.`}
         />
         <meta
           name="viewport"
@@ -294,7 +294,7 @@ export default function Home() {
                   ref={inputRef}
                   className="h-12 w-full rounded-full border border-zinc-600 pr-12 pl-11 focus:border-zinc-800 focus:outline-none focus:ring-1 focus:ring-zinc-800 sm:h-16 sm:py-2 sm:pr-16 sm:pl-16 sm:text-lg"
                   type="text"
-                  placeholder="How do I start a startup?"
+                  placeholder="Is POS better than POW?"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={handleKeyDown}
@@ -357,12 +357,12 @@ export default function Home() {
                       <div className="mt-4 border border-zinc-600 rounded-lg p-4">
                         <div className="flex justify-between">
                           <div>
-                            <div className="font-bold text-xl">{chunk.essay_title}</div>
-                            <div className="mt-1 font-bold text-sm">{chunk.essay_date}</div>
+                            <div className="font-bold text-xl">{chunk.tweet_title}</div>
+                            <div className="mt-1 font-bold text-sm">{chunk.tweet_date}</div>
                           </div>
                           <a
                             className="hover:opacity-50 ml-2"
-                            href={chunk.essay_url}
+                            href={chunk.tweet_url}
                             target="_blank"
                             rel="noreferrer"
                           >
@@ -383,12 +383,12 @@ export default function Home() {
                     <div className="mt-4 border border-zinc-600 rounded-lg p-4">
                       <div className="flex justify-between">
                         <div>
-                          <div className="font-bold text-xl">{chunk.essay_title}</div>
-                          <div className="mt-1 font-bold text-sm">{chunk.essay_date}</div>
+                          <div className="font-bold text-xl">{chunk.tweet_title}</div>
+                          <div className="mt-1 font-bold text-sm">{chunk.tweet_date}</div>
                         </div>
                         <a
                           className="hover:opacity-50 ml-2"
-                          href={chunk.essay_url}
+                          href={chunk.tweet_url}
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -401,7 +401,7 @@ export default function Home() {
                 ))}
               </div>
             ) : (
-              <div className="mt-6 text-center text-lg">{`AI-powered search & chat for Paul Graham's essays.`}</div>
+              <div className="mt-6 text-center text-lg">{`AI-powered search & chat for Vitalik tweets.`}</div>
             )}
           </div>
         </div>

@@ -3,14 +3,11 @@ export enum OpenAIModel {
 }
 
 export type PGEssay = {
-  title: string;
-  url: string;
-  date: string;
-  thanks: string;
+  tweet_url: string;
+  tweet_date: string;
   content: string;
   length: number;
   tokens: number;
-  chunks: PGChunk[];
 };
 
 export type PGChunk = {
@@ -30,5 +27,22 @@ export type PGJSON = {
   url: string;
   length: number;
   tokens: number;
-  essays: PGEssay[];
+  tweets: PGEssay[];
 };
+
+// Replace the following import line:
+// import { PGEssay, PGJSON } from "@/types";
+// with these type definitions:
+
+export type Tweet = {
+  tweet_url: string;
+  tweet_date: string;
+  content: string;
+  author: string;
+  embedding: number[];
+};
+
+export type TweetJSON = {
+  tweets: Tweet[];
+};
+
