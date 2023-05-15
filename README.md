@@ -1,20 +1,16 @@
-# Paul Graham GPT
+# Hao Chen GPT
 
-AI-powered search and chat for [Paul Graham's](https://twitter.com/paulg) [essays](http://www.paulgraham.com/articles.html).
+AI-powered search and chat for [Hao Chen's](https://twitter.com/haoel) tweets.
 
 All code & data used is 100% open-source.
 
 ## Dataset
 
-The dataset is a CSV file containing all text & embeddings used.
-
-Download it [here](https://drive.google.com/file/d/1BxcPw2mn0VYFucc62wlt9H0nQiOu38ki/view?usp=sharing).
-
-I recommend getting familiar with fetching, cleaning, and storing data as outlined in the scraping and embedding scripts below, but feel free to skip those steps and just use the dataset.
+The dataset is a CSV file containing all tweets from [here](https://github.com/yihong0618/twint/blob/master/haoel.csv).
 
 ## How It Works
 
-Paul Graham GPT provides 2 things:
+Hao Chen GPT provides 2 things:
 
 1. A search interface.
 2. A chat interface.
@@ -64,7 +60,7 @@ I recommend turning on Row Level Security and setting up a service role to use w
 3. Clone repo
 
 ```bash
-git clone https://github.com/mckaywrigley/paul-graham-gpt.git
+git clone https://github.com/adshao/haoel-gpt.git
 ```
 
 4. Install dependencies
@@ -92,7 +88,7 @@ SUPABASE_SERVICE_ROLE_KEY=
 npm run scrape
 ```
 
-This scrapes all of the essays from Paul Graham's website and saves them to a json file.
+This scrapes all of the essays from Hao Chen's website and saves them to a json file.
 
 7. Run embedding script
 
@@ -116,7 +112,7 @@ npm run dev
 
 ## Credits
 
-Thanks to [Paul Graham](https://twitter.com/paulg) for his writing.
+Thanks to [Hao Chen](https://twitter.com/haoel) for his writing.
 
 I highly recommend you read his essays.
 
@@ -124,7 +120,7 @@ I highly recommend you read his essays.
 
 ## Contact
 
-If you have any questions, feel free to reach out to me on [Twitter](https://twitter.com/mckaywrigley)!
+If you have any questions, feel free to reach out to me on [Twitter](https://twitter.com/AdamShao)!
 
 ## Notes
 
