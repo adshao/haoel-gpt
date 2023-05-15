@@ -19,11 +19,11 @@ export const Footer: FC = () => {
         based on the tweets of
         <a
           className="hover:opacity-50 ml-1"
-          href="https://twitter.com/VitalikButerin"
+          href="https://twitter.com/haoel"
           target="_blank"
           rel="noreferrer"
         >
-          Vitalik
+          Hao Chen 左耳朵耗子
         </a>
         .
       </div>

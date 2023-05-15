@@ -4,13 +4,10 @@ create extension vector;
 -- RUN 2nd
 create table pg (
   id bigserial primary key,
-  essay_title text,
-  essay_url text,
-  essay_date text,
-  essay_thanks text,
+  tweet_url text,
+  tweet_date timestamp without time zone,
   content text,
-  content_length bigint,
-  content_tokens bigint,
+  author text,
   embedding vector (1536)
 );
 
@@ -23,7 +20,7 @@ create or replace function pg_search (
 returns table (
   id bigint,
   tweet_url text,
-  tweet_date datetime,
+  tweet_date timestamp without time zone,
   content text,
   author text,
   similarity float

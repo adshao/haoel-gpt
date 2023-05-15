@@ -2,6 +2,7 @@ import { Tweet, TweetJSON } from "@/types";
 import { loadEnvConfig } from "@next/env";
 import { createClient } from "@supabase/supabase-js";
 import fs from "fs";
+import csv from 'csv-parser';
 import { Configuration, OpenAIApi } from "openai";
 
 loadEnvConfig("");
@@ -31,7 +32,7 @@ const generateEmbeddings = async (tweets: Tweet[]) => {
     };
   }));
 
-  const { data, error } = await supabase.from("tweetai").insert(rows).select("*");
+  const { data, error } = await supabase.from("pg").insert(rows).select("*");
 
   if (error) {
     console.log("error", error);
@@ -42,12 +43,28 @@ const generateEmbeddings = async (tweets: Tweet[]) => {
   await new Promise((resolve) => setTimeout(resolve, 200));
 };
 
+let tweets: Tweet[] = [];
+
 (async () => {
-  const tweetsJSON: TweetJSON = JSON.parse(fs.readFileSync("/Users/adam/Work/twint/VitalikButerin.json", "utf8"));
+  fs.createReadStream('../twint/haoel.csv')
+    .pipe(csv())
+    .on('data', (row) => {
+      // Parse the necessary fields from each row
+      let tweet_url = row['url'];
+      let tweet_date = row['Date Created'];
+      let content = row['Text'];
+      let author = 'haoel';
 
-const tweets = tweetsJSON.tweets.filter(tweet => new Date(tweet.tweet_date) < new Date('2019-12-25 21:20:58'));
-for (let i = 0; i < tweets.length; i += 100) {
-  await generateEmbeddings(tweets.slice(i, i + 100));
-}
+      // Create a new tweet object and add it to the array
+      tweets.push({ tweet_url, tweet_date, content, author, embedding: [] });
+    })
+    .on('end', async () => {
+      // Filter tweets
+      const filteredTweets = tweets.filter(tweet => new Date(tweet.tweet_date) < new Date('2022-07-15 06:03:13'));
+      
+      // Generate embeddings
+      for (let i = 0; i < filteredTweets.length; i += 100) {
+        await generateEmbeddings(filteredTweets.slice(i, i + 100));
+      }
+    });
 })();
-

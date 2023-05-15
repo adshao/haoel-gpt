@@ -1,5 +1,5 @@
 {
-  "name": "paul-graham-gpt",
+  "name": "haoel-gpt",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "@types/node": "18.14.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "csv-parser": "^3.0.0",
     "endent": "^2.1.0",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",

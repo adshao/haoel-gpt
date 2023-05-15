@@ -8,17 +8,17 @@ export const Navbar: FC = () => {
         <a
           className="hover:opacity-50"
         >
-          Vitalik GPT
+          Hao Chen GPT
         </a>
       </div>
       <div>
         <a
           className="flex items-center hover:opacity-50"
-          href="https://twitter.com/VitalikButerin"
+          href="https://twitter.com/haoel"
           target="_blank"
           rel="noreferrer"
         >
-          <div className="hidden sm:flex">Vitalik Twitter</div>
+          <div className="hidden sm:flex">Hao Chen Twitter</div>
 
           <IconExternalLink
             className="ml-1"
