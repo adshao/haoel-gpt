@@ -18,7 +18,7 @@ export const Navbar: FC = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <div className="hidden sm:flex">Hao Chen Twitter</div>
+          <div className="hidden sm:flex">陈皓 Twitter</div>
 
           <IconExternalLink
             className="ml-1"

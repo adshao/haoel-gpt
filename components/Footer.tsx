@@ -25,7 +25,6 @@ export const Footer: FC = () => {
         >
           Hao Chen 左耳朵耗子
         </a>
-        .
       </div>
 
       <div className="flex space-x-4">
